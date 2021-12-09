@@ -177,7 +177,9 @@ type Query {
 }
 
 type mutation {
-
+    addUser(username: String!, email: String!, password: String!): Auth
+    updateUser(username: String!, email: String!, password: String!): user
+    login(email: String!, password: String!): Auth
 }
 
 
