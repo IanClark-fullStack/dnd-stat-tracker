@@ -1,0 +1,127 @@
+body {
+  font-family: "MedievalSharp", cursive;
+  text-align: center;
+  /* background-color: black; */
+}
+
+h3 {
+  font-size: 60px;
+  color: rgb(137, 238, 91);
+  margin: 20px;
+  padding: 30px 0px 10px 0px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-column-gap: 1em;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px 0px 20px;
+  margin: 30px 30px 50px 30px;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: black;
+  background-color: rgb(137, 238, 91);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px black;
+  width: 120px;
+  height: 60px;
+  border: 2px solid black;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: rgb(77, 172, 33);
+  /* background-color: black; */
+}
+
+button:active {
+  background-color: rgb(137, 238, 91);
+  /* box-shadow: 0 5px #666; */
+  transform: translateY(4px);
+  /* background-color: black; */
+}
+.qty .count {
+  color: #000;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 5px 0px 0px 0px;
+  min-width: 35px;
+  text-align: center;
+}
+.qty .plus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  color: black;
+  /* color: white; */
+  width: 30px;
+  height: 30px;
+  font: 30px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+}
+.qty .minus {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  /* color: white; */
+  color: black;
+  width: 30px;
+  height: 30px;
+  font: 30px/1 Arial, sans-serif;
+  text-align: center;
+  border-radius: 50%;
+  background-clip: padding-box;
+}
+.result {
+  font-size: 45px;
+  color: rgb(137, 238, 91);
+  display: inline-block;
+  vertical-align: center;
+  font-weight: 700;
+  line-height: 30px;
+  padding: 25px 60px 25px 50px;
+  min-width: 35px;
+  text-align: center;
+  width: 120px;
+  height: 60px;
+}
+div {
+  text-align: center;
+}
+.minus:hover {
+  background-color: rgb(137, 238, 91);
+}
+.plus:hover {
+  background-color: rgb(137, 238, 91);
+}
+
+/* span {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}  */
+input {
+  border: 0;
+  width: 2%;
+}
+nput::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:disabled {
+  background-color: white;
+}
