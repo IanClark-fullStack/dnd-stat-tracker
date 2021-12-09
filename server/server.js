@@ -43,8 +43,8 @@ io.on('connection', (socket) => {
     // socket.on('player joined', () => {
     //     io.emit('player joined', )
     // });
-    socket.on('dice roll', () => {
-        io.emit('dice roll', )
+    socket.on('dice roll', (totalDiceRollSum) => {
+        io.emit('dice roll', totalDiceRollSum)
     });
     // socket.on('strength change', () => {
     //     io.emit('strength change', )
