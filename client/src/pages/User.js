@@ -14,31 +14,100 @@ export default function User() {
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
-                    id="panel1a-header"
-                >
-                    <Typography>STRENGTH</Typography>
+                    id="panel1a-header">
+                    <Typography>Dexterity</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Sleight of Hand --- 4
-                        Acrobatics --- 6
+                        Acrobatics   --- 4
+                        sleightOfHand --- 6
                         Stealth --- 9
+                        Dexterity Total --- 19
                     </Typography>
                 </AccordionDetails>
             </Accordion>
+
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
-                    id="panel2a-header"
-                >
-                    <Typography>STRENGTH+</Typography>
+                    id="panel2a-header">
+                    <Typography>Strength</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        Sleight of Hand --- 3
-                        Acrobatics --- 8
-                        Stealth --- 2
+                        Athletics --- 3
+                        Strength Total --- 3
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
+            
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header">
+                    <Typography>Wisdom</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        Animal Handling   --- 1
+                        insight --- 6
+                        Medicine --- 9
+                        Perception --- 4
+                        Survival --- 5
+                        Wisdom Total --- 25
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
+            
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel2a-header">
+                    <Typography>Charisma</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        Deception --- 3
+                        Intimidation --- 3
+                        Performance --- 1
+                        Persuasion --- 1
+                        Charisma Total --- 8
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
+            
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel2a-header">
+                    <Typography>Intelligence</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        Arcana --- 3
+                        History --- 3
+                        Investigation --- 1
+                        Nature --- 1
+                        Religion --- 8
+                        Intelligence Total --- 16
+                    </Typography>
+                </AccordionDetails>
+            </Accordion>
+            
+            <Accordion>
+                <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel2a-content"
+                    id="panel2a-header">
+                    <Typography>Constitution</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                    <Typography>
+                        Constitution Total --- 16
                     </Typography>
                 </AccordionDetails>
             </Accordion>
