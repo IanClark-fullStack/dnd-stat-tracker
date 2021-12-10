@@ -10,16 +10,16 @@ const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const server = http.createServer(app)
 const { Server } = require("socket.io");
 const { emit } = require('process');
-const io = new Server(server);
 
 const server = new ApolloServer({
     typeDefs,
     resolvers,
     context: authMiddleware
 });
+
+const io = new Server(server);
 
 server.applyMiddleware({ app });
 
