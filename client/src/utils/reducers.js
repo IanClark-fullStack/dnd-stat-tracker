@@ -1,14 +1,14 @@
 import { useReducer } from 'react';
 import {
-  UPDATE_STAT
-
+  UPDATE_STAT,
+  UPDATE_ABILITY
 } from './actions';
 
 export const reducer = (state, action) => {
   switch (action.type) {
     
     case UPDATE_STAT:
-      return{
+      return {
         ...state,
         character: state.character.map((stat) => {
           if (action._id === stat._id) {
@@ -17,7 +17,18 @@ export const reducer = (state, action) => {
           return stat;
         }),
       };
-      
+    
+    case UPDATE_ABILITY:
+      return {
+        ...state,
+        skill: state.skill.map((ability) => {
+          if (action._id === ability._id) {
+            ability.abilityValue = action.abilityValue;
+          }
+          return ability;
+        }),
+      };
+
     default:
       return state;
   }
