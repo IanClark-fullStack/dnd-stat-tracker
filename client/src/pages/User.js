@@ -15,14 +15,13 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header">
-                    <Typography>Dexterity</Typography>
+                    <Typography>Dexterity Total --- 19</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
                         Acrobatics   --- 4
                         sleightOfHand --- 6
                         Stealth --- 9
-                        Dexterity Total --- 19
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -32,12 +31,11 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
                     id="panel2a-header">
-                    <Typography>Strength</Typography>
+                    <Typography>Strength Total --- 3</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
                         Athletics --- 3
-                        Strength Total --- 3
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -47,7 +45,7 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header">
-                    <Typography>Wisdom</Typography>
+                    <Typography>Wisdom Total --- 25</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
@@ -56,7 +54,6 @@ export default function User() {
                         Medicine --- 9
                         Perception --- 4
                         Survival --- 5
-                        Wisdom Total --- 25
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -66,7 +63,7 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
                     id="panel2a-header">
-                    <Typography>Charisma</Typography>
+                    <Typography>Charisma Total --- 8</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
@@ -74,7 +71,6 @@ export default function User() {
                         Intimidation --- 3
                         Performance --- 1
                         Persuasion --- 1
-                        Charisma Total --- 8
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -84,7 +80,7 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
                     id="panel2a-header">
-                    <Typography>Intelligence</Typography>
+                    <Typography>Intelligence Total --- 16</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
@@ -93,7 +89,6 @@ export default function User() {
                         Investigation --- 1
                         Nature --- 1
                         Religion --- 8
-                        Intelligence Total --- 16
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -103,7 +98,7 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
                     id="panel2a-header">
-                    <Typography>Constitution</Typography>
+                    <Typography>Constitution Total --- 16</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
