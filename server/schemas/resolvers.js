@@ -5,7 +5,12 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
-
+        characters: async (parent, args) => {
+            return args;
+        },
+        users: async (parent, args) => {
+            return args;
+        }
     }, 
     Mutation: {
         login: async (parent, { email, password }) => {

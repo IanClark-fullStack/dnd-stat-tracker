@@ -34,6 +34,6 @@ export const reducer = (state, action) => {
   }
 }
 
-export function useStateReducer(initialState) {
+export function useProductReducer(initialState) {
   return useReducer(reducer, initialState)
 }

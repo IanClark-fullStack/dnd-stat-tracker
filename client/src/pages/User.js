@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './User.css';
+import CharacterList from '../components/CharacterList'
 
 export default function User() {
     return (
@@ -16,7 +17,9 @@ export default function User() {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography>STRENGTH</Typography>
+                    <Typography>
+                        <CharacterList />
+                    </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
@@ -26,7 +29,7 @@ export default function User() {
                     </Typography>
                 </AccordionDetails>
             </Accordion>
-            <Accordion>
+            {/* <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel2a-content"
@@ -41,7 +44,7 @@ export default function User() {
                         Stealth --- 2
                     </Typography>
                 </AccordionDetails>
-            </Accordion>
+            </Accordion> */}
         </div>
     )
 }
