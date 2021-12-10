@@ -8,11 +8,7 @@ const skillSchema = new Schema({
         ref: 'Ability', 
         required: true
     },
-    shortName: {
-        type: String, 
-        required: true
-    },
-    fullName: {
+    name: {
         type: String, 
     }, 
     scoreTotal: {

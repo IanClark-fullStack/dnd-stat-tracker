@@ -29,6 +29,11 @@ const characterSchema = new Schema({
         ref: 'Ability', 
         required: true
     }
+    class: {
+        type: Schema.Types.ObjectId,
+        ref: 'Class', 
+        required: true
+    }
 });
 
 
