@@ -1,3 +1,6 @@
+const { io } = require("socket.io-client");
+const socket = io();
+
 // Випадкові кубики кидаються при натисканні
 
 // кубик d4, при натисканні зробіть щось
@@ -15,8 +18,12 @@ $("#dice-roller-d4").on("click", () => {
   }
   // "d4-generated-num" 
   //  отримала integer
-  document.getElementById("d4-generated-number").innerHTML = totalDiceRollSum;
+  socket.emit('dice roll', totalDiceRollSum);
+  socket.on('dice roll', function(totalDiceRollSum) {
+    document.getElementById("d4-generated-number").innerHTML = totalDiceRollSum;
+  });
 });
+
 $("#dice-roller-d6").on("click", () => {
   let totalDiceRollSum = 0;
   const numOfRolls = parseInt($("#count_2").val());
@@ -25,8 +32,13 @@ $("#dice-roller-d6").on("click", () => {
     let result = Math.floor(Math.random() * 6) + 1;
     totalDiceRollSum = totalDiceRollSum + result;
   }
-  document.getElementById("d6-generated-number").innerHTML = totalDiceRollSum;
+  
+  socket.emit('dice roll', totalDiceRollSum);
+  socket.on('dice roll', function(totalDiceRollSum) {
+    document.getElementById("d6-generated-number").innerHTML = totalDiceRollSum;
+  });
 });
+
 $("#dice-roller-d8").on("click", () => {
   let totalDiceRollSum = 0;
   const numOfRolls = parseInt($("#count_3").val());
@@ -35,8 +47,12 @@ $("#dice-roller-d8").on("click", () => {
     let result = Math.floor(Math.random() * 8) + 1;
     totalDiceRollSum = totalDiceRollSum + result;
   }
-  document.getElementById("d8-generated-number").innerHTML = totalDiceRollSum;
+  socket.emit('dice roll', totalDiceRollSum);
+  socket.on('dice roll', function(totalDiceRollSum) {
+    document.getElementById("d8-generated-number").innerHTML = totalDiceRollSum;
+  });
 });
+
 $("#dice-roller-d10").on("click", () => {
   let totalDiceRollSum = 0;
   const numOfRolls = parseInt($("#count_4").val());
@@ -45,8 +61,13 @@ $("#dice-roller-d10").on("click", () => {
     let result = Math.floor(Math.random() * 10) + 1;
     totalDiceRollSum = totalDiceRollSum + result;
   }
-  document.getElementById("d10-generated-number").innerHTML = totalDiceRollSum;
+
+  socket.emit('dice roll', totalDiceRollSum);
+  socket.on('dice roll', function(totalDiceRollSum) {
+    document.getElementById("d10-generated-number").innerHTML = totalDiceRollSum;
+  });
 });
+
 $("#dice-roller-d12").on("click", () => {
   let totalDiceRollSum = 0;
   const numOfRolls = parseInt($("#count_5").val());
@@ -55,8 +76,12 @@ $("#dice-roller-d12").on("click", () => {
     let result = Math.floor(Math.random() * 12) + 1;
     totalDiceRollSum = totalDiceRollSum + result;
   }
-  document.getElementById("d12-generated-number").innerHTML = totalDiceRollSum;
+  socket.emit('dice roll', totalDiceRollSum);
+  socket.on('dice roll', function(totalDiceRollSum) {
+    document.getElementById("d12-generated-number").innerHTML = totalDiceRollSum;
+  });
 });
+
 $("#dice-roller-d20").on("click", () => {
   let totalDiceRollSum = 0;
   const numOfRolls = parseInt($("#count_6").val());
@@ -65,7 +90,10 @@ $("#dice-roller-d20").on("click", () => {
     let result = Math.floor(Math.random() * 20) + 1;
     totalDiceRollSum = totalDiceRollSum + result;
   }
-  document.getElementById("d20-generated-number").innerHTML = totalDiceRollSum;
+  socket.emit('dice roll', totalDiceRollSum);
+  socket.on('dice roll', function(totalDiceRollSum) {
+    document.getElementById("d20-generated-number").innerHTML = totalDiceRollSum;
+  });
 });
 
 // Плюс лічильники
