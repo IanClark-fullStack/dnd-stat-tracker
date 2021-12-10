@@ -6,14 +6,7 @@ function StatCard(charInfo) {
   const [state, dispatch] = useStoreContext();
 
   const {
-    _id,
-    constitution,
-    dexterity,
-    strength,
-    wisdom,
-    charisma,
-    intelligence
-    // class
+    _id
   } = charInfo;
 
   const { character } = state;
@@ -29,15 +22,22 @@ function StatCard(charInfo) {
 
   return (
     <div className="">
-      <div>
-        <p>{constitution}:</p>
-        <div>
-          <button onClick={statChange}>-</button>
-          <div>0</div>
-          <button onClick={statChange}>+</button>
-        </div>
-      </div>
-      <div>
+      {Object.keys(charInfo).map((skill, i) => { 
+        if (i !== 0) {
+          return (
+            <div>
+              <p>{skill}:</p>
+              <div>
+                <button onClick={statChange}>-</button>
+                <div>0</div>
+                <button onClick={statChange}>+</button>
+              </div>
+            </div>
+      )}
+      else return null;
+    })
+      }
+      {/* <div>
         <p>{dexterity}:</p>
         <div>
           <button onClick={statChange}>-</button>
@@ -76,7 +76,7 @@ function StatCard(charInfo) {
           <div>0</div>
           <button onClick={statChange}>+</button>
         </div>
-      </div>
+      </div>*/}
     </div>
   )
 }
