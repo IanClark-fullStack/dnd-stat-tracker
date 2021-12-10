@@ -23,12 +23,12 @@ const abilitySchema = new Schema({
         default: 10
     }, 
     modifier: {
-        type: Number,
-        default: 10
+        type: String,
+        default: '+1'
     },
     savingThrow: {
-        type: Number,
-        default: 10
+        type: String,
+        default: '-4',
     },
     skills: {
         type: Schema.Types.ObjectId,
