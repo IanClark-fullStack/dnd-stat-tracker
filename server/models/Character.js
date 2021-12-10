@@ -3,25 +3,35 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const characterSchema = new Schema({
-    username: {
-        type: String,
-        required: true,
-        trim: true
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User', 
+        required: true
     },
-    email: {
-        type: String,
-        required: true,
-        trim: true
+    name: {
+        type: String, 
+        required: true
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 6
+    startingClass: {
+        type: String, 
+    }, 
+    level: {
+        type: Number,
+        default: 1
     },
-    characters: [Character.schema]
+    characterStats: {
+        type: Schema.Types.ObjectId,
+        ref: 'Stat',
+        required: true
+    },
+    abilityScores: {
+        type: Schema.Types.ObjectId,
+        ref: 'Ability', 
+        required: true
+    }
 });
 
 
-const User = mongoose.model('User', userSchema);
+const Character = mongoose.model('Character', characterSchema);
 
 module.exports = Character;

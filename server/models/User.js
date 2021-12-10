@@ -19,7 +19,15 @@ const userSchema = new Schema({
         required: true,
         minlength: 6
     },
-    characters: [Character.schema]
+    isAdmin: {
+        type: Boolean,
+        default: false,
+    },
+    characters: {
+        type: Schema.Types.ObjectId,
+        ref: 'Character', 
+        required: true, 
+    }
 });
 // set up pre-save middleware to create password
 userSchema.pre('save', async function(next) {
