@@ -182,5 +182,6 @@ type mutation {
     login(email: String!, password: String!): Auth
 }
 
-
 `
+
+module.exports = typeDefs;
