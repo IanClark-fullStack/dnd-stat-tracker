@@ -13,6 +13,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import User from './pages/User';
 import Admin from './pages/Admin';
+import LoginPage from './components/pages/LoginPage'
 
 // Adding Imports 
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -56,6 +57,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
+          <Route path="/login" component={ LoginPage } />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/dashboard" component={User} />
           <Route exact path="/dmdashboard" component={Admin} />
