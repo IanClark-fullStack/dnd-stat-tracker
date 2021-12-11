@@ -9,14 +9,14 @@ const classSchema = new Schema({
         required: true
     },
     name: {
-        type: [String], 
+        type: String, 
         required: true
     },
     hitDie: {
         type: Number, 
     }, 
     savingThrows: {
-        type: Number
+        type: [String]
     },
 });
 
