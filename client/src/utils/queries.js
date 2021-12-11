@@ -26,6 +26,6 @@ export const QUERY_CHARACTERS = gql`
   }
 `;
 
-export const QUERY_SKILLS = gql`
+// export const QUERY_SKILLS = gql`
 
-`;
+// `;

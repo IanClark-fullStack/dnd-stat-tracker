@@ -17,12 +17,10 @@ function CharacterSheet(userInfo) {
           <StatCard
             key={character._id}
             _id={character._id}
-            constitution={character.constitution}
-            dexterity={character.dexterity}
-            strength={character.strength}
-            wisdom={character.wisdom}
-            charisma={character.charisma}
-            intelligence={character.intelligence}
+            level={character.level}
+            name={character.name}
+            characterStats={character.characterStats}
+            abilityScores={character.abilityScores}
             // class
           />
           ))}
