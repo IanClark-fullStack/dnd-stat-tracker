@@ -6,21 +6,26 @@ const statSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'Character', 
-        required: true
+        // required: true
     },
-    name: {
-        type: [String], 
-        required: true
-    },
-    currentValue: {
-        type: [Number], 
-        default: 2
+    initiative: {
+        type: Number,
     }, 
-    currentHitDice: {
-        type: String,
-        default: '1d8'
-    },
-    
+    HP: {
+        type: Number,
+    }, 
+    speed: {
+        type: Number,
+    }, 
+    hitDice: {
+        type: Number,
+    }, 
+    armor: {
+        type: Number,
+    }, 
+    proficiency: {
+        type: Number,
+    }, 
     // abilityScores: {
     //     type: Schema.Types.ObjectId,
     //     ref: 'Ability', 
