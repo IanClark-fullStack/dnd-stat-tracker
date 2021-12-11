@@ -198,55 +198,45 @@ db.once('open', async () => {
 
     const stats = await Stat.insertMany([
         {
-            statList: {
-                Initiative: 2,
-                HP: 2,
-                Speed: 2,
-                hitDice: 2,
-                Armor: 12,
-                Proficiency: '+2'
-            },
+            initiative: 2,
+            HP: 2,
+            speed: 2,
+            hitDice: 2,
+            armor: 12,
+            proficiency: '+2'
         }, 
         {
-            statList: {
-                Initiative: 6,
+                initiative: 6,
                 HP: 4,
-                Speed: 4,
+                speed: 4,
                 hitDice: 6,
-                Armor: 11,
-                Proficiency: '+7'
-            },
+                armor: 11,
+                proficiency: '+7' 
         }, 
         {
-            statList: {
-                Initiative: 3,
+                initiative: 3,
                 HP: 6,
-                Speed: 4,
+                speed: 4,
                 hitDice: 5,
-                Armor: 8,
-                Proficiency: '+8'
-            },
+                armor: 8,
+                proficiency: '+8'
         }, 
         {
-            statList: {
-                Initiative: 1,
+                initiative: 1,
                 HP: 4,
-                Speed: 4,
+                speed: 4,
                 hitDice: 3,
-                Armor: 8,
-                Proficiency: '+4'
-            },
+                armor: 8,
+                proficiency: '+4'
+
         }, 
         {
-            
-            statList: {
-                Initiative: 4,
+                initiative: 4,
                 HP: 3,
-                Speed: 5,
+                speed: 5,
                 hitDice: 3,
-                Armor: 8,
-                Proficiency: '+5'
-            },
+                armor: 8,
+                proficiency: '+5'
         }, 
     ]);
     console.log('______________    Stats Seeded    ______________');
