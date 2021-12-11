@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/IanClark-fullStack/dnd-stat-tracker/issues"
   },
-  "homepage": "https://github.com/IanClark-fullStack/dnd-stat-tracker#readme"
+  "homepage": "https://github.com/IanClark-fullStack/dnd-stat-tracker#readme",
+  "dependencies": {
+    "@mui/material": "^5.2.3"
+  }
 }
