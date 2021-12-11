@@ -1,7 +1,10 @@
-const Ability = require('./User');
+
+const User = require('./User');
 const Character = require('./Character');
+const Ability = require('./Ability');
 const Skill = require('./Skill');
 const Stat = require('./Stat');
-const User = require('./User');
 
-module.exports = { Ability, Character, Skill, Stat, User };
+
+
+module.exports = { User, Character, Ability, Skill, Stat };

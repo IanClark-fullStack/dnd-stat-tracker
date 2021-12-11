@@ -20,7 +20,7 @@ const skillSchema = new Schema({
     skills: {
         type: Schema.Types.ObjectId,
         ref: 'Skill', 
-        required: true
+        // required: true
     }
 });
 
