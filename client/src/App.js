@@ -13,6 +13,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import User from './pages/User';
 import Admin from './pages/Admin';
+import LoginPage from './components/pages/LoginPage'
+import RegisterPage from './components/pages/RegisterPage'
+import LandingPage from './components/pages/LandingPage'
+import HomePage from './components/pages/HomePage'
 
 // Adding Imports 
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -56,6 +60,10 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
+          <Route path="/login" component={ LoginPage } />
+          <Route path="/register" component={ RegisterPage } />
+          <Route path="/home" component={ HomePage } />
+          <Route exact path="/" component={ LandingPage } />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/dashboard" component={User} />
           <Route exact path="/dmdashboard" component={Admin} />
