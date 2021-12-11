@@ -8,7 +8,7 @@ const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const app = express();
 const { Server } = require("socket.io");
 const { emit } = require('process');
@@ -46,6 +46,9 @@ io.on('connection', (socket) => {
     socket.on('dice roll', (totalDiceRollSum) => {
         io.emit('dice roll', totalDiceRollSum)
     });
+    socket.on('stat change', (statForCharacter) => {
+        io.emit('stat change', statForCharacter)
+    })
     // socket.on('strength change', () => {
     //     io.emit('strength change', )
     // });
