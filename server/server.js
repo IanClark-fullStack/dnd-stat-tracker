@@ -46,6 +46,9 @@ io.on('connection', (socket) => {
     socket.on('dice roll', (totalDiceRollSum) => {
         io.emit('dice roll', totalDiceRollSum)
     });
+    socket.on('stat change', (statForCharacter) => {
+        io.emit('stat change', statForCharacter)
+    })
     // socket.on('strength change', () => {
     //     io.emit('strength change', )
     // });

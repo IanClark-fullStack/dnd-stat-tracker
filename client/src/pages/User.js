@@ -16,7 +16,9 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header">
-                    <Typography>Dexterity Total --- 19</Typography>
+                    <Typography>
+                        <CharacterList />
+                    </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>

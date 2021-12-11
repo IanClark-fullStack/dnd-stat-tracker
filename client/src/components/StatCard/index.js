@@ -1,6 +1,8 @@
 import React from "react";
 import { useStoreContext } from '../../utils/GlobalState';
 import { UPDATE_STAT } from "../../utils/actions";
+const { io } = require("socket.io-client");
+const socket = io();
 
 function StatCard(charInfo) {
   const [state, dispatch] = useStoreContext();
@@ -13,23 +15,26 @@ function StatCard(charInfo) {
 
   const statChange = () => {
     const statForCharacter = character.find((charStat) => charStat._id === _id)
+    socket.emit('stat change', statForCharacter);
+    socket.on('stat change', function(statForCharacter) {
       dispatch({
         type: UPDATE_STAT,
         _id: _id,
         statValue: parseInt(statForCharacter.statValue) 
       })
+    })
   }
 
   return (
     <div className="">
-      {Object.keys(charInfo).map((skill, i) => { 
+      {Object.keys(charInfo).map((stat, i) => { 
         if (i !== 0) {
           return (
             <div>
-              <p>{skill}:</p>
+              <p>{stat}:</p>
               <div>
                 <button onClick={statChange}>-</button>
-                <div>0</div>
+                <div>0</div> {/* Need to add in how to get the stat value.*/}
                 <button onClick={statChange}>+</button>
               </div>
             </div>
