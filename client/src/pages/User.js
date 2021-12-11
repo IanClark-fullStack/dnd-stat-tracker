@@ -6,11 +6,13 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './User.css';
 import CharacterList from '../components/CharacterList'
+import Dice from '../components/Dice';
 
 export default function User() {
     return (
         <div className='test4'>
             <h1>User page here</h1>
+            <Dice />
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
