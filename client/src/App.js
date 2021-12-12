@@ -18,6 +18,7 @@ import RegisterPage from './components/RegisterPage'
 import LandingPage from './components/LandingPage'
 import HomePage from './components/HomePage'
 import Dice from './components/Dice';
+import DiceRoller from './components/DiceRoller';
 
 // Adding Imports 
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -69,6 +70,7 @@ function App() {
           <Route exact path="/dashboard" component={User} />
           <Route exact path="/dmdashboard" component={Admin} />
           <Route exact path="/dice" component={Dice} />
+          <Route exact path="/diceroller" component={DiceRoller} />
         </Switch>
 
       </div>
