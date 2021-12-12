@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -10,11 +14,10 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-import Auth from '../utils/auth';
+
 
 import './Signup.css';
-import { ADD_USER } from '../utils/mutations';
-import { useMutation } from '@apollo/client';
+
 
 const useStyles = makeStyles(theme => ({
     "@global": {
@@ -57,6 +60,9 @@ export default function Signup(props) {
                 username: formState.username,
             },
         });
+        console.log(mutationResponse);
+
+        console.log(mutationResponse.data);
         const token = mutationResponse.data.addUser.token;
         Auth.login(token);
     };
@@ -89,6 +95,7 @@ export default function Signup(props) {
                                 variant="outlined"
                                 required
                                 fullWidth
+                                type="username"
                                 id="username"
                                 label="Username"
                                 autoFocus
@@ -102,6 +109,7 @@ export default function Signup(props) {
                                 fullWidth
                                 id="email"
                                 label="Email Address"
+                                type="email"
                                 name="email"
                                 autoComplete="email"
                                 onChange={handleChange}

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
+const Character = require('./Character');
 
 const userSchema = new Schema({
     username: {
@@ -26,7 +27,7 @@ const userSchema = new Schema({
     characters: {
         type: Schema.Types.ObjectId,
         ref: 'Character', 
-        required: true, 
+        // required: true, 
     }
 });
 // set up pre-save middleware to create password
