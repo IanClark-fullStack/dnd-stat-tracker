@@ -1,2 +1,2 @@
 export const UPDATE_STAT = "UPDATE_STAT"
-export const UPDATE_ABILITY = "UPDATE_ABILITY"
+export const UPDATE_SKILL = "UPDATE_SKILL"

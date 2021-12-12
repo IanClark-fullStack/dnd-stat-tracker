@@ -6,7 +6,11 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './User.css';
 import CharacterList from '../components/CharacterList'
+<<<<<<< HEAD
+import Dice from '../components/Dice'
+=======
 import Dice from '../components/Dice';
+>>>>>>> ddabffb9c6bc5fbe583bb6f103a4cf48dfc39712
 
 export default function User() {
     return (
@@ -18,7 +22,9 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header">
-                    <Typography>Dexterity Total --- 19</Typography>
+                    <Typography>
+                        Dexterity 10
+                    </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>

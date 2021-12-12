@@ -1,7 +1,7 @@
 import { useReducer } from 'react';
 import {
   UPDATE_STAT,
-  UPDATE_ABILITY
+  UPDATE_SKILL
 } from './actions';
 
 export const reducer = (state, action) => {
@@ -18,7 +18,7 @@ export const reducer = (state, action) => {
         }),
       };
     
-    case UPDATE_ABILITY:
+    case UPDATE_SKILL:
       return {
         ...state,
         skill: state.skill.map((ability) => {
