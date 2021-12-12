@@ -58,6 +58,7 @@ export default function Signup(props) {
                 email: formState.email,
                 password: formState.password,
                 username: formState.username,
+                isAdmin: formState.isAdmin
             },
         });
         console.log(mutationResponse);
@@ -69,9 +70,20 @@ export default function Signup(props) {
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+        // console.log(value);
+        // console.log(event.target.checked);
         setFormState({
             ...formState,
             [name]: value,
+        });
+    };
+    const handleAdmin = (event) => {
+        const { name } = event.target;
+        // console.log(value);
+        console.log(event.target.checked);
+        setFormState({
+            ...formState,
+            [name]: event.target.checked,
         });
     };
 
@@ -129,6 +141,9 @@ export default function Signup(props) {
                                 onChange={handleChange}
 
                             />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <input type="checkbox" name="isAdmin" id="checkbox" value={true} required onChange={handleAdmin}/> <span>Group DM?</span>
                         </Grid>
                     </Grid>
                     <Button
