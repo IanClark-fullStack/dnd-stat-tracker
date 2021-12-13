@@ -38,16 +38,12 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_CHARACTERS = gql`
-  query queryCharacters {
+  {
     characters {
       _id
-      level
       name
-      user {
-        _id
-      }
+      level
       characterStats {
-        _id
         initiative
         HP
         speed
@@ -57,11 +53,22 @@ export const QUERY_CHARACTERS = gql`
       }
       abilityScores {
         shortName
+        fullName
+        desc
+        scoreTotal
+        modifier
+        savingThrow
+        skills {
+          name
+          scoreTotal
+          desc
+        }
       }
       class {
         name
+        hitDie
+        savingThrows
       }
-      # class
     }
   }
 `;

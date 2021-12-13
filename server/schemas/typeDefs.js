@@ -14,7 +14,6 @@ type Character {
     _id: ID
     level: Int
     name: String
-    user: User
     characterStats: Stat
     abilityScores: Ability
     class: Class
@@ -51,7 +50,6 @@ type Skill {
 
 type Stat {
     _id: ID
-    user: User
     initiative: Int
     HP: Int
     speed: Int
@@ -59,6 +57,7 @@ type Stat {
     armor: Int
     proficiency: String
 }
+
 type Class {
     _id: ID
     abilities: Ability
