@@ -1,23 +1,34 @@
 import React from "react";
 import AbilityCard from '../AbilityCard';
+import SkillCard from '../SkillCard';
 import StatCard from '../StatCard';
 import { useQuery } from '@apollo/client';
+import './styles.css';
 import { QUERY_ABILITIES, QUERY_STATS } from '../../utils/queries';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Box from '@mui/material/Box';
 
-function CharacterCard(charInfo) {
+
+function CharacterCard({characterProp}) {
+  const abilityProp = characterProp.abilityScores; 
+  const statProp = characterProp.characterStats;
+  const classProp = characterProp.class; 
   // const [state, dispatch] = useStoreContext();
 
-  const { data:abilityData } = useQuery(QUERY_ABILITIES);
-  const { data:statData } = useQuery(QUERY_STATS);
+  // const { data:abilityData } = useQuery(QUERY_ABILITIES);
+  // const { data:statData } = useQuery(QUERY_STATS);
 
-  console.log(abilityData);
-  console.log(statData)
+  // console.log(abilityData);
+  // console.log(statData)
 
-  const {
-    // _id,
-    name,
-    level
-  } = charInfo;
+  // const {
+  //   // _id,
+  //   name,
+  //   level
+  // } = charInfo;
 
   // const { character } = state;
 
@@ -35,12 +46,38 @@ function CharacterCard(charInfo) {
 
 
   return (
-    <div className="">
-      <p>{name}</p>
-      <p>{level}</p>
-      <div>
-        <div>
-          {(abilityData !== undefined) && abilityData.abilities.map((ability) => (
+    
+    <div className="justifyCon">
+      <Accordion>
+        <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header">
+                {`${abilityProp.shortName} - Level ${abilityProp.scoreTotal}`} 
+        </AccordionSummary>
+
+        <AccordionDetails>
+          <Box sx={{ display: 'flex', bordeBottom: '1px solid #000', width: '100%', flexDirection: 'column' }}>
+            <h5 className='smFont'>{`${abilityProp.fullName}`}</h5>
+            <ul className='scoreSet'>
+              <li>modifier
+                <span className='characterNums1'>{abilityProp.modifier}</span>
+              </li>
+              <li>saving throw
+                <span className='characterNums1'>{abilityProp.modifier}</span>
+              </li>
+              
+              {/* <SkillCard skillProp={abilityProp.skills} /> */}
+              <li>
+                <span className='characterNums1'>{abilityProp.modifier}</span>
+              </li>
+            </ul>
+          </Box>
+          
+        </AccordionDetails>
+
+      </Accordion>
+          {/* {(abilityData !== undefined) && abilityData.abilities.map((ability) => (
             <AbilityCard
             character={ability.character}
             desc={ability.desc}
@@ -51,22 +88,22 @@ function CharacterCard(charInfo) {
             savingThrow={ability.savingThrow}
             skills={ability.skills.Skill}
             />
-            ))}
+            ))} */}
         </div>
-      </div>
-      <div>
-        {(statData !== undefined) && statData.stats.map((stat) => (
-          <StatCard 
-          initiative={stat.initiative}
-          HP={stat.HP}
-          speed={stat.speed}
-          hitDice={stat.hitDice}
-          armor={stat.armor}
-          proficiency={stat.proficiency}
-          />
-        ))}
-      </div>
-    </div>
+     
+    //   <div>
+    //     {(statData !== undefined) && statData.stats.map((stat) => (
+    //       <StatCard 
+    //       initiative={stat.initiative}
+    //       HP={stat.HP}
+    //       speed={stat.speed}
+    //       hitDice={stat.hitDice}
+    //       armor={stat.armor}
+    //       proficiency={stat.proficiency}
+    //       />
+    //     ))}
+    //   </div>
+    // </div>
   )
 
   // return (

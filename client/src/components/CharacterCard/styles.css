@@ -4,18 +4,25 @@
     margin-top: 10vh;
     
 }
-.dinline {
+.smFont{ 
+    font-family: ballinger-mono-bold, monospace;
+    text-align: left;
+    font-size: 14px;
+}
+.justifyCon {
+    width: 100%;
+}
+.scoreSet {
     list-style-type: none;
     padding-inline-start: 0px;
     text-align: left
 }
 
-.dinline li {
+.scoreSet li {
     font-family: ballinger-mono-light, monospace;
-    display: inline-block;
     margin-top: 2vh;
     text-align: left;
-    margin-right: 2vh;
+
 }
 
 .character-container {
