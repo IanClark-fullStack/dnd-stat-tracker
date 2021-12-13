@@ -352,6 +352,19 @@ db.once('open', async () => {
         password: 'password1234',
         characters: characters[1]._id,
     }); 
+    
+    await User.create({
+        username: 'magicIsDead',
+            email: 'magicIsDead@test.com',
+            password: 'password12345',
+        characters: characters[2]._id,
+    }); 
+    await User.create({
+        username: 'warlock_barbee',
+        email: 'warlock_barbee@test.com',
+        password: 'password1234567',
+        characters: characters[3]._id,
+    }); 
     // const users = await User.insertMany([
     //     {
     //         username: 'DmForever',
