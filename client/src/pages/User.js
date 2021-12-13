@@ -6,6 +6,11 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './User.css';
 import DiceRoller from '../components/DiceRoller';
+
+import Box from '@mui/material/Box';
+
+    
+
 //import CharacterList from '../components/CharacterList'
 
 import CharacterList from '../components/CharacterList'
@@ -16,6 +21,25 @@ export default function User() {
     return (
         <div className='test4'>
             <h1>User page here</h1>
+            <div id='user-info-container' style={{ width: '50%' }}>
+                <Box sx={{ display: 'flex', p: 1, m: 1, bgcolor: 'background.paper', }}>
+                    <Box sx={{ flexDirection: 'column' }}>
+                        <h3>{"User Character Name"}</h3>
+                    </Box>
+                    <Box sx={{ flexDirection: 'column' }}>    
+                        <Box sx={{ justifyContent: 'space-evenly' }}>
+                            <ul>
+                                <li>{"Character Class"}</li>
+                                <li style={}>{"HP"}</li>
+                                <li>{"Level"}</li>
+                            </ul>
+                        </Box>
+                    </Box>
+                    </Box>
+                <Box sx={{ display: 'inline-flex', p: 1, m: 1, bgcolor: 'background.paper' }}>
+                    {"I'm a flexbox container that uses inline-flex!"}
+                </Box>
+            </div>
             <DiceRoller />
             <Accordion>
                 <AccordionSummary
