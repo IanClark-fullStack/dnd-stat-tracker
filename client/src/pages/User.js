@@ -5,12 +5,8 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './User.css';
-import CharacterList from '../components/CharacterList'
-<<<<<<< HEAD
-import Dice from '../components/Dice'
-=======
+//import CharacterList from '../components/CharacterList'
 import Dice from '../components/Dice';
->>>>>>> ddabffb9c6bc5fbe583bb6f103a4cf48dfc39712
 
 export default function User() {
     return (
