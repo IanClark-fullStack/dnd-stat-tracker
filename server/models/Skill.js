@@ -6,7 +6,7 @@ const skillSchema = new Schema({
     ability: {
         type: Schema.Types.ObjectId,
         ref: 'Ability', 
-        required: true
+        // required: true
     },
     name: {
         type: String, 

@@ -6,7 +6,7 @@ const abilitySchema = new Schema({
     character: {
         type: Schema.Types.ObjectId,
         ref: 'Character', 
-        required: true
+        // required: true
     },
     shortName: {
         type: String, 
@@ -31,7 +31,7 @@ const abilitySchema = new Schema({
         default: '-4',
     },
     skills: {
-        type: Schema.Types.ObjectId,
+        type: [Schema.Types.ObjectId],
         ref: 'Skill', 
         required: true
     }

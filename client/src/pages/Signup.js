@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import Auth from '../utils/auth';
+import { ADD_USER } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -10,11 +14,10 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-import Auth from '../utils/auth';
+
 
 import './Signup.css';
-import { ADD_USER } from '../utils/mutations';
-import { useMutation } from '@apollo/client';
+
 
 const useStyles = makeStyles(theme => ({
     "@global": {
@@ -55,17 +58,32 @@ export default function Signup(props) {
                 email: formState.email,
                 password: formState.password,
                 username: formState.username,
+                isAdmin: formState.isAdmin
             },
         });
+        console.log(mutationResponse);
+
+        console.log(mutationResponse.data);
         const token = mutationResponse.data.addUser.token;
         Auth.login(token);
     };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+        // console.log(value);
+        // console.log(event.target.checked);
         setFormState({
             ...formState,
             [name]: value,
+        });
+    };
+    const handleAdmin = (event) => {
+        const { name } = event.target;
+        // console.log(value);
+        console.log(event.target.checked);
+        setFormState({
+            ...formState,
+            [name]: event.target.checked,
         });
     };
 
@@ -89,6 +107,7 @@ export default function Signup(props) {
                                 variant="outlined"
                                 required
                                 fullWidth
+                                type="username"
                                 id="username"
                                 label="Username"
                                 autoFocus
@@ -102,6 +121,7 @@ export default function Signup(props) {
                                 fullWidth
                                 id="email"
                                 label="Email Address"
+                                type="email"
                                 name="email"
                                 autoComplete="email"
                                 onChange={handleChange}
@@ -121,6 +141,9 @@ export default function Signup(props) {
                                 onChange={handleChange}
 
                             />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <input type="checkbox" name="isAdmin" id="checkbox" value={true} required onChange={handleAdmin}/> <span>Group DM?</span>
                         </Grid>
                     </Grid>
                     <Button

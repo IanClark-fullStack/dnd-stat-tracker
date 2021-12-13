@@ -6,7 +6,7 @@ const classSchema = new Schema({
     abilities: {
         type: Schema.Types.ObjectId,
         ref: 'Ability', 
-        required: true
+        // required: true
     },
     name: {
         type: String, 

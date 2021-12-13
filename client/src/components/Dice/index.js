@@ -4,50 +4,110 @@ import React, { useState } from 'react';
 
 
 
+
+
 export default function Dice() {
-    const diceRoll = async (event) => {
-        // event.preventDefault()
-        const [diceValue, setDiceValue] = useState('')
-
-
-        const changeDice = (num) => setDiceValue(num)
-
-
-
-
-        switch (diceValue) {
-            case "d4":
-                return Math.floor(Math.random() * 4) + 1
-
-            case "d6":
-                return Math.floor(Math.random() * 6) + 1
-
-            case "d8":
-                return Math.floor(Math.random() * 8) + 1
-
-            case "d10":
-                return Math.floor(Math.random() * 10) + 1
-
-            case "d12":
-                return Math.floor(Math.random() * 12) + 1
-
-            case "d20":
-                return Math.floor(Math.random() * 20) + 1
-
-            default:
-                return 0
-        }
-
+    
+    // const [previousRolls, setPreviousRolls] = useState([]); 
+    const [output, setOutput] = useState(0);
+   
+    const [diceValue, setDiceValue] = useState('');
+    const dieChoices = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20'];
+    let rollTotal = 0
+    const rollEm = (choice) => {
+        setDiceValue('')
+        setDiceValue(choice);
+         
+        
     }
+ 
+
+    // const diceRoll = async (dieChoice) => {
+            // switch (diceValue) {
+            //     case "d4":
+            //         output = Math.floor(Math.random() * 4) + 1
+            //         setPreviousRolls([...previousRolls, output]);
+            //         break;
+            //     case "d6":
+            //         output = Math.floor(Math.random() * 6) + 1
+            //         console.log(output);
+            //         setPreviousRolls([...previousRolls, output]);
+            //         break;
+            //     case "d8":
+            //         output = Math.floor(Math.random() * 8) + 1
+            //         setPreviousRolls([...previousRolls, output]);
+            //         break;
+            //     case "d10":
+            //         output = Math.floor(Math.random() * 10) + 1;
+            //         setPreviousRolls([...previousRolls, output]);
+            //         break;
+            //     case "d12":
+            //         output = Math.floor(Math.random() * 12) + 1;
+            //         setPreviousRolls([...previousRolls, output]);
+            //         break;
+            //     case "d20":
+            //         output = Math.floor(Math.random() * 20) + 1
+            //         setPreviousRolls([...previousRolls, output]);
+            //         break;
+            //     default:
+            //         output = 0;
+            //     }
+
+                
+
+    
+            
+            switch (diceValue) {
+                
+                case "d4":
+                    rollTotal = Math.floor(Math.random() * 4) + 1;
+                    
+                    setOutput(rollTotal);
+                    // setDiceValue('');
+                    // setPreviousRolls([...previousRolls, output]);
+                    break;
+                case "d6":
+                    rollTotal = Math.floor(Math.random() * 6) + 1;
+                    
+                    break;
+                case "d8":
+                    rollTotal = Math.floor(Math.random() * 8) + 1;
+                    break;
+                case "d10":
+                    rollTotal = Math.floor(Math.random() * 10) + 1;
+                    break;
+                case "d12":
+                    rollTotal = Math.floor(Math.random() * 12) + 1;
+                    break;
+                case "d20":
+                    rollTotal = Math.floor(Math.random() * 20) + 1;
+                    break;
+                default:
+                    rollTotal = 0;
+            }    
+          
+            // setOutput(rollTotal);
+            
+    
+            
+            // diceRoll(diceValue);
+    
     return (
         <div>
-            <button type="Roll" id="d4" value="random number" onClick={changeDice}>Roll d4</button>
-            <button type="Roll" id="d6" value="random number" onClick={diceRoll}>Roll d6</button>
-            <button type="Roll" id="d8" value="random number" onClick={diceRoll}>Roll d8</button>
-            <button type="Roll" id="d10" value="random number" onClick={diceRoll}>Roll d10</button>
-            <button type="Roll" id="d12" value="random number" onClick={diceRoll}>Roll d12</button>
-            <button type="Roll" id="d20" value="random number" onClick={diceRoll}>Roll d20</button>
-            <div>{diceValue}</div>
+            {dieChoices.map((choice) => {
+                return (
+                    <> 
+                        <button 
+                            type="Roll"
+                            key={choice} 
+                            id={choice} 
+                            onClick={() => rollEm(`${choice}`)}>
+                                {`Roll ${choice}`}
+                        </button>
+                    </>
+                )
+            })}
+            <h2>{output}</h2>
         </div>
     )
 }
