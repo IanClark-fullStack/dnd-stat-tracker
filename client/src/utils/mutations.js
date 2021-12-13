@@ -16,7 +16,7 @@ export const ADD_USER = gql`
     $username: String!
     $email: String!
     $password: String!
-    $isAdmin: Boolean!
+    $isAdmin: Boolean
   ) {
     addUser(
       username: $username

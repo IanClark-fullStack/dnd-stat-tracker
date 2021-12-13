@@ -64,8 +64,10 @@ export default function Signup(props) {
         console.log(mutationResponse);
 
         console.log(mutationResponse.data);
+        
         const token = mutationResponse.data.addUser.token;
         Auth.login(token);
+
     };
 
     const handleChange = (event) => {
@@ -90,6 +92,7 @@ export default function Signup(props) {
 
     return (
         <Container component="main" maxWidth="xs">
+           
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>

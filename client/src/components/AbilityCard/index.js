@@ -27,11 +27,11 @@ function AbilityCard(abilityInfo) {
 
   return (
     <div className="">
-      <div>{fullName}</div>
-      <div>{scoreTotal}</div>
-      <div>{modifier}</div>
-      <div>{savingThrow}</div>
-      <div>{skills}</div>
+      <div>Ability name: {fullName}</div>
+      <div>Ability score total: {scoreTotal}</div>
+      <div>Ability modifier: {modifier}</div>
+      <div>Ability saving throw: {savingThrow}</div>
+      <div>Ability skills: {skills}</div>
     </div>
   )
 }

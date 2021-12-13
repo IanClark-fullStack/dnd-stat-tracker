@@ -67,7 +67,7 @@ function App() {
 
 
         <Switch>
-          <Route exact path="/" component={Home} />
+          {/* <Route exact path="/" component={Home} /> */}
 
           {/* <Route exact path="/login" component={Login} /> */}
           <Route path="/login" component={ Login } />
@@ -75,9 +75,9 @@ function App() {
           <Route exact path="/login" component={Login} />
           {/* <Route path="/login" component={ LoginPage } />
 
-          <Route path="/register" component={ RegisterPage } />
+          <Route path="/register" component={ RegisterPage } />*/}
           <Route path="/home" component={ HomePage } />
-          <Route exact path="/" component={ LandingPage } /> */}
+          <Route exact path="/" component={ LandingPage } /> 
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/dashboard" component={User} />
           <Route exact path="/dmdashboard" component={Admin} />

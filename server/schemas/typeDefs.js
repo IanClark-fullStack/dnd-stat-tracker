@@ -7,7 +7,7 @@ type User {
     email: String
     password: String
     isAdmin: Boolean
-    characters: Character!
+    characters: Character
 }
 
 type Character {
@@ -30,6 +30,7 @@ type Character {
 }
 
 type Ability {
+    _id: ID
     character: Character
     shortName: String
     fullName: String
@@ -41,6 +42,7 @@ type Ability {
 }
 
 type Skill {
+    _id: ID
     ability: Ability 
     name: String
     scoreTotal: Int
@@ -48,6 +50,7 @@ type Skill {
 }
 
 type Stat {
+    _id: ID
     user: User
     initiative: Int
     HP: Int
@@ -57,6 +60,7 @@ type Stat {
     proficiency: String
 }
 type Class {
+    _id: ID
     abilities: Ability
     name: String
     hitDie: Int
@@ -216,14 +220,15 @@ type Auth {
 }
 
 type Query {
-    users: User   
+    users: [User]
+    user: User
     characters: [Character] 
     abilities: [Ability]
     stats: [Stat]
 }
 
 type Mutation {
-    addUser(username: String!, email: String!, password: String!, isAdmin: Boolean!): Auth
+    addUser(username: String!, email: String!, password: String!, isAdmin: Boolean): Auth
     updateUser(username: String!, email: String!, password: String!): User
     login(email: String!, password: String!): Auth
 }

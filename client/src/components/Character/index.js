@@ -7,22 +7,24 @@ function CharacterSheet() {
 
   const { data } = useQuery(QUERY_CHARACTERS);
 
+  console.log(data)
+
   return (
     <div className="">
-      <p>{data.name}'s stat sheet</p>
-      <div className=''>
-        {data.map((character) => (
+      <div className="">
+        {(data !== undefined) && data.characters.map((character) => (
           <CharacterCard
             key={character._id}
             _id={character._id}
             level={character.level}
             name={character.name}
-            characterStats={character.characterStats}
-            abilityScores={character.abilityScores}
-            // class
+            characterStats={character.characterStats.Stat}
+            abilityScores={character.abilityScores.Ability}
+            class={character.class.Class}
           />
           ))}
       </div>
+      
     </div>
   )
 }

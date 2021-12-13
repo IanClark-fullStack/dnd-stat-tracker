@@ -7,12 +7,15 @@ import { QUERY_ABILITIES, QUERY_STATS } from '../../utils/queries';
 function CharacterCard(charInfo) {
   // const [state, dispatch] = useStoreContext();
 
-  const { abilityData } = useQuery(QUERY_ABILITIES);
-  const { statData } = useQuery(QUERY_STATS);
+  const { data:abilityData } = useQuery(QUERY_ABILITIES);
+  const { data:statData } = useQuery(QUERY_STATS);
 
+  console.log(abilityData);
+  console.log(statData)
 
   const {
     // _id,
+    name,
     level
   } = charInfo;
 
@@ -33,26 +36,27 @@ function CharacterCard(charInfo) {
 
   return (
     <div className="">
+      <p>{name}</p>
       <p>{level}</p>
       <div>
-        {abilityData.map((ability) => (
-          <AbilityCard
-          key={ability._id}
-          _id={ability._id}
-          shortName={ability.shortName}
-          fullName={ability.fullName}
-          scoreTotal={ability.scoreTotal}
-          modifier={ability.modifier}
-          savingThrow={ability.savingThrow}
-          skills={ability.skills}
-          />
-        ))}
+        <div>
+          {(abilityData !== undefined) && abilityData.abilities.map((ability) => (
+            <AbilityCard
+            character={ability.character}
+            desc={ability.desc}
+            shortName={ability.shortName}
+            fullName={ability.fullName}
+            scoreTotal={ability.scoreTotal}
+            modifier={ability.modifier}
+            savingThrow={ability.savingThrow}
+            skills={ability.skills.Skill}
+            />
+            ))}
+        </div>
       </div>
       <div>
-        {statData.map((stat) => (
+        {(statData !== undefined) && statData.stats.map((stat) => (
           <StatCard 
-          key={stat._id}
-          _id={stat._id}
           initiative={stat.initiative}
           HP={stat.HP}
           speed={stat.speed}

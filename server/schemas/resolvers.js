@@ -6,17 +6,28 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         characters: async (parent, args) => {
-            return args;
+            return Character.find(args);
         },
         users: async (parent, args) => {
+            return User.find().populate('characters');
+        },
+        user: async (parent, { username }) => {
+            return User.findOne({ username }).populate('characters');
+            // if (context.user) {
+            //     const user = await User.findById({ _id: context.user._id}).populate('characters');
+            //     return user;
+            // }
+            
+            
             return args;
         },
         abilities: async (parent, args) => {
-            return args;
+            return Ability.find();
         },
         stats: async (parent, args) => {
-            return args;
+            return Stat.find();
         }
+
     }, 
     Mutation: {
         addUser: async (parent, args) => {
