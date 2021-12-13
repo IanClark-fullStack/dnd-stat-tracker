@@ -218,6 +218,8 @@ type Auth {
 type Query {
     users: User   
     characters: [Character] 
+    abilities: [Ability]
+    stats: [Stat]
 }
 
 type Mutation {
