@@ -7,7 +7,7 @@ type User {
     email: String
     password: String
     isAdmin: Boolean
-    characters: Character!
+    characters: Character
 }
 
 type Character {

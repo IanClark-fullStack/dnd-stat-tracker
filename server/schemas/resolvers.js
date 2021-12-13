@@ -9,13 +9,13 @@ const resolvers = {
             return args;
         },
         users: async (parent, args) => {
-            return args;
+            return User.find();
         },
         abilities: async (parent, args) => {
-            return args;
+            return Ability.find();
         },
         stats: async (parent, args) => {
-            return args;
+            return Stat.find();
         }
     }, 
     Mutation: {

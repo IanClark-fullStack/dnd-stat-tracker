@@ -15,12 +15,12 @@ export const QUERY_CHARACTERS = gql`
   {
     characters {
       _id
-      constitution
-      dexterity
-      strength
-      wisdom
-      charisma
-      intelligence
+      level
+      name
+      user
+      characterStats
+      abilityScores
+      class
       # class
     }
   }

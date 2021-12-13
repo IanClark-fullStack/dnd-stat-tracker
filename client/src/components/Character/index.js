@@ -9,7 +9,6 @@ function CharacterSheet() {
 
   return (
     <div className="">
-      <p>{data.name}'s stat sheet</p>
       <div className=''>
         {data.map((character) => (
           <CharacterCard

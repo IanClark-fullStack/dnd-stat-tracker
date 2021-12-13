@@ -19,7 +19,7 @@ export default function User() {
                     aria-controls="panel1a-content"
                     id="panel1a-header">
                     <Typography>
-                        Dexterity 10
+                        <CharacterList />
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
