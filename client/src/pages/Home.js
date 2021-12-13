@@ -8,8 +8,8 @@ import './Home.css';
 export default function Home() {
     return (
         <div className='test1'>
-            <h1>Homepage</h1>
-            <p>Two buttons will be here( login/sign up?)</p>
+            <h1>DND - Stat Tracker</h1>
+            <p>Please login to see stats or register!</p>
             <Stack direction="row" spacing={2} justifyContent="center">
                 <Button variant="outlined" component={Link} to="/login">Login</Button>
                 <Button variant="outlined" component={Link} to="/signup">Sign Up</Button>
