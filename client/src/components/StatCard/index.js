@@ -1,88 +1,63 @@
 import React from "react";
-import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_STAT } from "../../utils/actions";
-const { io } = require("socket.io-client");
-const socket = io();
+// import { useStoreContext } from '../../utils/GlobalState';
+// import { UPDATE_STAT } from "../../utils/actions";
 
-function StatCard(charInfo) {
-  const [state, dispatch] = useStoreContext();
+// const { io } = require("socket.io-client");
+// const socket = io();
+
+function StatCard(statInfo) {
+  // const [state, dispatch] = useStoreContext();
 
   const {
-    _id
-  } = charInfo;
+    // _id,
+    initiative,
+    HP,
+    speed,
+    hitDice,
+    armor,
+    proficiency
+  } = statInfo
 
-  const { character } = state;
+  // const { character } = state;
 
-  const statChange = () => {
-    const statForCharacter = character.find((charStat) => charStat._id === _id)
-    socket.emit('stat change', statForCharacter);
-    socket.on('stat change', function(statForCharacter) {
-      dispatch({
-        type: UPDATE_STAT,
-        _id: _id,
-        statValue: parseInt(statForCharacter.statValue) 
-      })
-    })
-  }
-
+  // const statChange = () => {
+  //   const statForCharacter = character.find((charStat) => charStat._id === _id)
+  //   socket.emit('stat change', statForCharacter);
+  //   socket.on('stat change', function(statForCharacter) {
+  //     dispatch({
+  //       type: UPDATE_STAT,
+  //       _id: _id,
+  //       statValue: parseInt(statForCharacter.statValue) 
+  //     })
+  //   })
+  // }
+  
   return (
     <div className="">
-      {Object.keys(charInfo).map((stat, i) => { 
-        if (i !== 0) {
-          return (
-            <div>
-              <p>{stat}:</p>
-              <div>
-                <button onClick={statChange}>-</button>
-                <div>0</div> {/* Need to add in how to get the stat value.*/}
-                <button onClick={statChange}>+</button>
-              </div>
-            </div>
-      )}
-      else return null;
-    })
-      }
-      {/* <div>
-        <p>{dexterity}:</p>
-        <div>
-          <button onClick={statChange}>-</button>
-          <div>0</div>
-          <button onClick={statChange}>+</button>
-        </div>
-      </div>
-      <div>
-        <p>{strength}:</p>
-        <div>
-          <button onClick={statChange}>-</button>
-          <div>0</div>
-          <button onClick={statChange}>+</button>
-        </div>
-      </div>
-      <div>
-        <p>{wisdom}:</p>
-        <div>
-          <button onClick={statChange}>-</button>
-          <div>0</div>
-          <button onClick={statChange}>+</button>
-        </div>
-      </div>
-      <div>
-        <p>{charisma}:</p>
-        <div>
-          <button onClick={statChange}>-</button>
-          <div>0</div>
-          <button onClick={statChange}>+</button>
-        </div>
-      </div>
-      <div>
-        <p>{intelligence}:</p>
-        <div>
-          <button onClick={statChange}>-</button>
-          <div>0</div>
-          <button onClick={statChange}>+</button>
-        </div>
-      </div>*/}
+      <div>{initiative}</div>
+      <div>{HP}</div>
+      <div>{speed}</div>
+      <div>{hitDice}</div>
+      <div>{armor}</div>
+      <div>{proficiency}</div>
     </div>
+    // <div className="">
+    //   {Object.keys(statInfo).map((stat, i) => { 
+    //     if (i !== 0) {
+    //       return (
+    //         <div>
+    //           <p>{stat}:</p>
+    //           <div>
+    //             <button onClick={statChange}>-</button>
+    //             <div>0</div> {/* Need to add in how to get the stat value.*/}
+    //             <button onClick={statChange}>+</button>
+    //           </div>
+    //         </div>
+    //   )}
+    //   else return null;
+    // })
+    //   }
+    // </div>
   )
 }
 

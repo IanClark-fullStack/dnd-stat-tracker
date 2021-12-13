@@ -1,20 +1,18 @@
 import React from "react";
 import { useQuery } from '@apollo/client';
 import { QUERY_CHARACTERS } from '../../utils/queries';
-import StatCard from '../StatCard'
+import CharacterCard from '../CharacterCard'
 
-function CharacterSheet(userInfo) {
+function CharacterSheet() {
 
   const { data } = useQuery(QUERY_CHARACTERS);
 
-  const { username } = userInfo
-
   return (
     <div className="">
-      <p>{username}'s stat sheet</p>
+      <p>{data.name}'s stat sheet</p>
       <div className=''>
         {data.map((character) => (
-          <StatCard
+          <CharacterCard
             key={character._id}
             _id={character._id}
             level={character.level}
