@@ -23,7 +23,7 @@ export default function SignUpPage() {
                     <input type="password" name="password" requiredc />
                 </p>
                 <p>
-                    <input type="checkbox" name="isAdmin" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>.
+                    <input type="checkbox" name="isAdmin" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>
                 </p>
                 <p>
                     <button id="sub_btn" type="submit">Register</button>
