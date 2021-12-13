@@ -12,6 +12,7 @@ export default function DiceRoller() {
         let rando = () => {
             return Math.floor(Math.random() * num) + 1
         }
+        
         setDiceValue({...diceValue, result: rando()});
         let newNum = diceValue.result; 
         // log.length < 5 ? log.push(newNum) : log.shift(); 

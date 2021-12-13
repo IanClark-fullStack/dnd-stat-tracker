@@ -5,18 +5,18 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './User.css';
-
+import DiceRoller from '../components/DiceRoller';
 //import CharacterList from '../components/CharacterList'
 
 import CharacterList from '../components/CharacterList'
-import Dice from '../components/Dice'
+
 
 
 export default function User() {
     return (
         <div className='test4'>
             <h1>User page here</h1>
-            <Dice />
+            <DiceRoller />
             <Accordion>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
