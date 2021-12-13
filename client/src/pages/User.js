@@ -22,9 +22,9 @@ export default function User() {
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel1a-header">
-                    <Typography>
+                    {/* <Typography> */}
                         <CharacterList />
-                    </Typography>
+                    {/* </Typography> */}
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>

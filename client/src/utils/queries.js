@@ -11,41 +11,86 @@ export const QUERY_USERS = gql`
   }
 `;
 
-export const QUERY_CHARACTERS = gql`
+export const QUERY_USER = gql`
   {
+    user {
+      _id
+      username
+      email
+      password
+      isAdmin
+      characters {
+        _id
+        level
+        name
+        characterStats {
+          initiative
+          HP
+          speed
+          hitDice
+          armor
+          proficiency
+        }
+      }
+      
+    }
+  }
+`;
+
+export const QUERY_CHARACTERS = gql`
+  query queryCharacters {
     characters {
       _id
       level
       name
-      user
-      characterStats
-      abilityScores
-      class
+      user {
+        _id
+      }
+      characterStats {
+        _id
+        initiative
+        HP
+        speed
+        hitDice
+        armor
+        proficiency
+      }
+      abilityScores {
+        shortName
+      }
+      class {
+        name
+      }
       # class
     }
   }
 `;
 
 export const QUERY_ABILITIES = gql`
-  {
+  query queryAbilities {
     abilities {
-      _id
-      character
+      character {
+        name
+      }
       shortName
       fullName
       desc
       scoreTotal
       modifier
       savingThrow
-      skills
+      skills {
+        name
+      }
     }
   }
 `;
 
 export const QUERY_STATS = gql`
-  {
+  query queryStats {
     stats {
-      user
+      user {
+        _id
+      }
       initiative
       HP
       speed
