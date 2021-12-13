@@ -11,6 +11,32 @@ export const QUERY_USERS = gql`
   }
 `;
 
+export const QUERY_USER = gql`
+  {
+    user {
+      _id
+      username
+      email
+      password
+      isAdmin
+      characters {
+        _id
+        level
+        name
+        characterStats {
+          initiative
+          HP
+          speed
+          hitDice
+          armor
+          proficiency
+        }
+      }
+      
+    }
+  }
+`;
+
 export const QUERY_CHARACTERS = gql`
   {
     characters {

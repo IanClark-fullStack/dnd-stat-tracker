@@ -9,6 +9,16 @@ const resolvers = {
             return args;
         },
         users: async (parent, args) => {
+            return User.find().populate('characters');
+        },
+        user: async (parent, { username }) => {
+            return User.findOne({ username }).populate('characters');
+            // if (context.user) {
+            //     const user = await User.findById({ _id: context.user._id}).populate('characters');
+            //     return user;
+            // }
+            
+            
             return args;
         },
         abilities: async (parent, args) => {
@@ -17,6 +27,7 @@ const resolvers = {
         stats: async (parent, args) => {
             return args;
         }
+
     }, 
     Mutation: {
         addUser: async (parent, args) => {

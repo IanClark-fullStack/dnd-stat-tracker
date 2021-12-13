@@ -7,7 +7,7 @@ type User {
     email: String
     password: String
     isAdmin: Boolean
-    characters: Character!
+    characters: Character
 }
 
 type Character {
@@ -216,7 +216,8 @@ type Auth {
 }
 
 type Query {
-    users: User   
+    users: [User]
+    user: User
     characters: [Character] 
     abilities: [Ability]
     stats: [Stat]
