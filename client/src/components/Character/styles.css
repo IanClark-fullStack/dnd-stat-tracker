@@ -1,0 +1,24 @@
+.mono {
+    font-family: ballinger-mono, monospace;
+    text-align: left;
+    margin-top: 10vh;
+    
+}
+.dinline {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    text-align: left
+}
+
+.dinline li {
+    font-family: ballinger-mono-light, monospace;
+    display: inline-block;
+    margin-top: 2vh;
+    text-align: left;
+    margin-right: 2vh;
+}
+
+.character-container {
+    border: 1px solid #333;
+    margin-bottom: 6vh;
+}
