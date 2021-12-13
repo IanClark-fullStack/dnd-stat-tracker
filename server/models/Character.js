@@ -6,11 +6,11 @@ const characterSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User', 
-        required: true
+        // required: true
     },
     name: {
         type: String, 
-        required: true
+        // required: true
     },
     startingClass: {
         type: String, 

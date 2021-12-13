@@ -280,51 +280,12 @@ db.once('open', async () => {
     console.log('______________    Classes Seeded    ______________');
 
 
-    
-    await User.deleteMany();
-    const users = await User.insertMany([
-        {
-            username: 'DmForever',
-            email: 'root@admin.com',
-            password: 'rootadmin',
-            isAdmin: true,
-        }, 
-        {
-            username: 'paladin_simp',
-            email: 'paladin_simp@test.com',
-            password: 'password123',
-        }, 
-        {
-            username: 'sadboi_sorcerer',
-            email: 'sadboi@test.com',
-            password: 'password1234',
-        }, 
-        {
-            username: 'magicIsDead',
-            email: 'magicIsDead@test.com',
-            password: 'password12345',
-        }, 
-        {
-            username: 'overly_postive',
-            email: 'overly_postive@test.com',
-            password: 'password123456',
-        }, 
-        {
-            username: 'warlock_barbee',
-            email: 'warlock_barbee@test.com',
-            password: 'password1234567',
-        }, 
-        
-    ])
-
-    console.log('______________    Users Seeded    ______________');
-
 
     await Character.deleteMany();
 
     const characters = await Character.insertMany([
         { 
-            user: users[1]._id,
+            // user: users[1]._id,
             name: 'Dracoiris',
             level: 5,
             abilityScores: abilities[0]._id,
@@ -332,7 +293,7 @@ db.once('open', async () => {
             characterStats: stats[0]._id
         },
         { 
-            user: users[2]._id,
+            // user: users[2]._id,
             name: 'Xyrerris Shortcloak',
             level: 3,
             abilityScores: abilities[1]._id,
@@ -340,7 +301,7 @@ db.once('open', async () => {
             characterStats: stats[1]._id
         },
         { 
-            user: users[3]._id,
+            // user: users[3]._id,
             name: 'Hollydove Soldshort',
             level: 1,
             class: classes[2]._id,
@@ -348,7 +309,7 @@ db.once('open', async () => {
             characterStats: stats[2]._id
         },
         { 
-            user: users[4]._id,
+            // user: users[4]._id,
             name: 'Maraga',
             level: 7,
             class: classes[3]._id,
@@ -356,7 +317,7 @@ db.once('open', async () => {
             characterStats: stats[3]._id
         },
         { 
-            user: users[5]._id,
+            // user: users[5]._id,
             name: 'Zeddicus Zul Zorander',
             level: 2,
             abilityScores: abilities[0]._id,
@@ -369,6 +330,64 @@ db.once('open', async () => {
     console.log('______________    Characters Seeded    ______________');
 
 
+
+    
+    await User.deleteMany();
+
+    await User.create({
+        username: 'DmForever',
+        email: 'root@admin.com',
+        password: 'rootadmin',
+        isAdmin: true,
+    }); 
+    await User.create({
+        username: 'paladin_simp',
+        email: 'paladin_simp@test.com',
+        password: 'password123',
+        characters: characters[0]._id,
+    }); 
+    await User.create({
+        username: 'sadboi_sorcerer',
+        email: 'sadboi@test.com',
+        password: 'password1234',
+        characters: characters[1]._id,
+    }); 
+    // const users = await User.insertMany([
+    //     {
+    //         username: 'DmForever',
+    //         email: 'root@admin.com',
+    //         password: 'rootadmin',
+    //         isAdmin: true,
+    //     }, 
+    //     {
+    //         username: 'paladin_simp',
+    //         email: 'paladin_simp@test.com',
+    //         password: 'password123',
+    //     }, 
+    //     {
+    //         username: 'sadboi_sorcerer',
+    //         email: 'sadboi@test.com',
+    //         password: 'password1234',
+    //     }, 
+    //     {
+    //         username: 'magicIsDead',
+    //         email: 'magicIsDead@test.com',
+    //         password: 'password12345',
+    //     }, 
+    //     {
+    //         username: 'overly_postive',
+    //         email: 'overly_postive@test.com',
+    //         password: 'password123456',
+    //     }, 
+    //     {
+    //         username: 'warlock_barbee',
+    //         email: 'warlock_barbee@test.com',
+    //         password: 'password1234567',
+    //     }, 
+        
+    // ])
+
+    console.log('______________    Users Seeded    ______________');
 
 
     process.exit();
