@@ -1,84 +1,99 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
-import Auth from '../utils/auth';
-import './Login.css';
-export default function Login(props) {
-    const [formState, setFormState] = useState({ email: '', password: '' });
-    const [login, { error }] = useMutation(LOGIN);
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormState({
-            ...formState,
-            [name]: value,
-        });
-    };
-
-    const handleFormSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const responseFromMutation = await login({
-                variables: { email: formState.email, password: formState.password }, 
-
-            });
-            const token = responseFromMutation.data.login.token;
-            Auth.login(token);
-
-        } catch (err) {
-            console.log(err);
-        }
-    }    
-    return (
-        <div className="text-center m-5-auto">
-            <h2>Join us</h2>
-            <h5>Create your personal account</h5>
-            <form onSubmit={handleFormSubmit}>
-                {/* <p>
-                    <label>Username</label><br/>
-                    <input type="text" name="first_name" required />
-                </p> */}
-                <p>
-                    <label>Email address</label><br/>
-                    <input 
-                        type="email"
-                        name="email" 
-                        placeholder="dracorrisX@theunderworld.com" 
-                        onChange={handleChange}
-                        required 
-                    />
-                </p>
-                <p>
-                    <label>Password</label><br/>
-                    <input 
-                        type="password" 
-                        name="password" 
-                        onChange={handleChange}
-                        required />
-                </p>
-                <p>
-                    <input type="checkbox" name="checkbox" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>.
-                </p>
-                {error ? (
-                    <div>
-                        <p className="error-text">The provided credentials are incorrect</p>
-                    </div>
-                ) : null}
-                <p>
-                    <button id="sub_btn" type="submit">Login</button>
-                </p>
-                
-            </form>
-            <footer>
-                <p><Link to="/">Back to Homepage</Link>.</p>
-            </footer>
-        </div>
-    )
-};
+import { useMutation } from '@apollo/client';
 
 
+
+
+const theme = createTheme();
+
+export default function LogIn() {
+  const [login, { error }] = useMutation(LOGIN);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
     
 
+    const data = new FormData(event.currentTarget);
+    // eslint-disable-next-line no-console
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
 
-
+  return (
+    <ThemeProvider theme={theme}>
+      <Container component="main" maxWidth="xs">
+        <CssBaseline />
+        <Box
+          sx={{
+            marginTop: 8,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Log in
+          </Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Remember me"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Log In
+            </Button>
+    
+          </Box>
+        </Box>
+      </Container>
+      <footer>
+      <Link 
+         to="/">Back to Homepage</Link>
+      </footer>
+    </ThemeProvider>
+  
+  );
+}
