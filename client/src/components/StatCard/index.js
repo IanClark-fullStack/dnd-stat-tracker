@@ -34,12 +34,12 @@ function StatCard(statInfo) {
   
   return (
     <div className="">
-      <div>{initiative}</div>
-      <div>{HP}</div>
-      <div>{speed}</div>
-      <div>{hitDice}</div>
-      <div>{armor}</div>
-      <div>{proficiency}</div>
+      <div>Initiative: {initiative}</div>
+      <div>HP: {HP}</div>
+      <div>Speed: {speed}</div>
+      <div>HitDice: {hitDice}</div>
+      <div>Armor: {armor}</div>
+      <div>Proficiency: {proficiency}</div>
     </div>
     // <div className="">
     //   {Object.keys(statInfo).map((stat, i) => { 
