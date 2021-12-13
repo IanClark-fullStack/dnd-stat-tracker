@@ -19,6 +19,13 @@ const resolvers = {
             // }
             
             
+            return args;
+        },
+        abilities: async (parent, args) => {
+            return args;
+        },
+        stats: async (parent, args) => {
+            return args;
         }
 
     }, 

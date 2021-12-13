@@ -52,6 +52,32 @@ export const QUERY_CHARACTERS = gql`
   }
 `;
 
-// export const QUERY_SKILLS = gql`
+export const QUERY_ABILITIES = gql`
+  {
+    abilities {
+      _id
+      character
+      shortName
+      fullName
+      desc
+      scoreTotal
+      modifier
+      savingThrow
+      skills
+    }
+  }
+`;
 
-// `;
+export const QUERY_STATS = gql`
+  {
+    stats {
+      user
+      initiative
+      HP
+      speed
+      hitDice
+      armor
+      proficiency
+    }
+  }
+`;

@@ -219,6 +219,8 @@ type Query {
     users: [User]
     user: User
     characters: [Character] 
+    abilities: [Ability]
+    stats: [Stat]
 }
 
 type Mutation {
