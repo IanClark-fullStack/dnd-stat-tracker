@@ -1,4 +1,6 @@
 import { useState } from 'react';
+// const { io } = require("socket.io-client");
+// const socket = io();
 
 export default function DiceRoller() {  
     const [diceValue, setDiceValue] = useState({result: 0, dice: [4, 6, 8, 10, 20]});
@@ -16,11 +18,17 @@ export default function DiceRoller() {
         setDiceValue({...diceValue, result: rando()});
         let newNum = diceValue.result; 
         // log.length < 5 ? log.push(newNum) : log.shift(); 
+        // socket.emit('dice roll', (newNum));
         // console.log(log);
         setRollsLog([...rollsLog, newNum]); 
-        console.log(rollsLog);
+        // console.log(rollsLog);
         setOutput(newNum);
-        console.log(output)
+        // console.log(output)
+        // socket.on('dice roll', function(newNum) {
+        //     console.log(newNum)
+        //     setRollsLog([...rollsLog, newNum]);
+        //     setOutput(newNum);
+        // })
     }
     // const handleChange = (event) => {
     //     let newOutput = event.target.value;
