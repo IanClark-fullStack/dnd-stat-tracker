@@ -38,6 +38,7 @@ function CharacterSheet() {
                                 <ul className='dinline'>
                                     <li key={index}>{`the ${character.class.name}`}</li>
                                     <li>Level - {character.level}</li>
+                                    <li>{`HP ${character.HP}`}</li>
                                     <li>Initiative - {character.characterStats.initiative}</li>
                                     <li>HP - {character.characterStats.HP}</li>
                                     <li>Speed - {character.characterStats.speed}</li>

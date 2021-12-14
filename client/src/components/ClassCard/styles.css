@@ -9,6 +9,7 @@
     text-align: left;
     font-size: 14px;
 }
+
 .justifyCon {
     width: 100%;
 }
@@ -16,19 +17,19 @@
     list-style-type: none;
     padding-inline-start: 0px;
     margin-top: 2vh;
-    text-align: left
-}
-
-.scoreSet li {
-    font-family: ballinger-mono-light, monospace;
-    margin-top: 2vh;
     text-align: left;
 
 }
-.characterNums {
-    font-size: 18px; 
-    
+.scoreSet li {
+    text-align: left;
+    font-family: ballinger-mono-light, monospace;
+    margin-top: 3vh;
+
 }
+
+
+
+
 .character-container {
     border: 1px solid #333;
     margin-bottom: 6vh;

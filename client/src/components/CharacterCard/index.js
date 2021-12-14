@@ -2,20 +2,31 @@ import React from "react";
 import AbilityCard from '../AbilityCard';
 import SkillCard from '../SkillCard';
 import StatCard from '../StatCard';
+import ClassCard from '../ClassCard';
 import { useQuery } from '@apollo/client';
 import './styles.css';
 import { QUERY_ABILITIES, QUERY_STATS } from '../../utils/queries';
 import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Box from '@mui/material/Box';
 
-
 function CharacterCard({characterProp}) {
+  const [expanded, setExpanded] = React.useState(false);
   const abilityProp = characterProp.abilityScores; 
-  const statProp = characterProp.characterStats;
-  const classProp = characterProp.class; 
+  
+
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
+
+
+
+
   // const [state, dispatch] = useStoreContext();
 
   // const { data:abilityData } = useQuery(QUERY_ABILITIES);
@@ -48,15 +59,23 @@ function CharacterCard({characterProp}) {
   return (
     
     <div className="justifyCon">
-      <Accordion>
+      <Accordion sx={{ width: '100%'}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header">
-                {`${abilityProp.shortName} - Level ${abilityProp.scoreTotal}`} 
+        sx={{borderBottom: '1px solid #000'}}
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1bh-content"
+          id="panel1bh-header"
+        >
+          <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: '900' }}>
+            {`${abilityProp.shortName}`}
+          </Typography>
+          <Typography sx={{ color: 'text.secondary', marginLeft: '4px' }}>      
+            {`Level ${abilityProp.scoreTotal}`}
+          </Typography>
         </AccordionSummary>
-
+        
         <AccordionDetails>
+          <Typography>
           <Box sx={{ display: 'flex', bordeBottom: '1px solid #000', width: '100%', flexDirection: 'column' }}>
             <h5 className='smFont'>{`${abilityProp.fullName}`}</h5>
             <ul className='scoreSet'>
@@ -73,10 +92,26 @@ function CharacterCard({characterProp}) {
               </li>
             </ul>
           </Box>
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <ClassCard classProp={characterProp.class} />
+
+      <      
+      {/* <Accordion>
+        <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header">
+                 
+        </AccordionSummary>
+
+        <AccordionDetails>
+          
           
         </AccordionDetails>
 
-      </Accordion>
+      </Accordion> */}
           {/* {(abilityData !== undefined) && abilityData.abilities.map((ability) => (
             <AbilityCard
             character={ability.character}

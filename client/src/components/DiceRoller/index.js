@@ -1,43 +1,52 @@
 import { useState } from 'react';
-// const { io } = require("socket.io-client");
-// const socket = io();
+// const { io } = require('socket.io-client');
+// CHANGE BEFORE DEPLOYMENT
+// const socket = io('http://localhost:3001');
 
 export default function DiceRoller() {  
     const [diceValue, setDiceValue] = useState({result: 0, dice: [4, 6, 8, 10, 20]});
-    const [output, setOutput] = useState(1);
     const [rollsLog, setRollsLog] = useState([]); 
+    // useEffect(() => {
+    //     console.log('joining room');
+    //     socket.emit('dice roll', {room: 'test-room'});
+        
+    // })
+    // useEffect(() => {
+    //     socket.on( payload => {
+    //         setMessageCount(messageCount + 1);
+    //         document.title = `${messageCount} new messages have been emitted`;
+    //     });
+    //   }, []); //only re-run the effect if new message comes in
+    
     
     const calculateTotal = (event) => {
         event.preventDefault();
-        let num = event.target.name;
+        let dieChoice = event.target.name;
         // console.log(num)
         let rando = () => {
-            return Math.floor(Math.random() * num) + 1
+            return Math.floor(Math.random() * dieChoice) + 1
         }
-        
-        setDiceValue({...diceValue, result: rando()});
+        let result = rando();
+        setDiceValue({...diceValue, result});
         let newNum = diceValue.result; 
+        
         // log.length < 5 ? log.push(newNum) : log.shift(); 
         // socket.emit('dice roll', (newNum));
         // console.log(log);
-        setRollsLog([...rollsLog, newNum]); 
-        // console.log(rollsLog);
-        setOutput(newNum);
-        // console.log(output)
-        // socket.on('dice roll', function(newNum) {
-        //     console.log(newNum)
-        //     setRollsLog([...rollsLog, newNum]);
-        //     setOutput(newNum);
-        // })
+        setRollsLog([...rollsLog, result]); 
+        console.log(rollsLog);
+        
+        
     }
-    // const handleChange = (event) => {
-    //     let newOutput = event.target.value;
-    //     console.log(newOutput);
+
+    const handleChange = (event) => {
+        let newOutput = event.target.name;
+        console.log(newOutput);
+        calculateTotal(newOutput);
+    
         
-    //     setOutput(newOutput);
         
-        
-    // }
+    }
 
 
     return (
@@ -50,31 +59,37 @@ export default function DiceRoller() {
                     </>
                 )
             })}
-            <h2 name={1}>{output}</h2>
-            {rollsLog.length < 6 ? (
-                <ul>
-                    {rollsLog.map((num, index) => {
-                        return (
-                            <li key={index}>{num}</li>
-                        )
-                    })}
-                </ul>
-            ) : (
-                <ul>
-                    {rollsLog.shift()}
-                    {rollsLog.map((num, index) => {
-                        return (
-                            <li key={index}>{num}</li>
-                        )
-                    })}
-                </ul>
+            <h2 name={diceValue.result}>{diceValue.result}</h2>
+            {!rollsLog.length ? (
+                <h6>Roll the dice</h6>
+                ) : 
+                rollsLog.length < 6 ? (
+                    <ul>
+                        {rollsLog.map((num, index) => {
+                            return (
+                                <li key={index}>{num}</li>
+                            )
+                        })}
+                    </ul>
+                ) : (
+                    <ul>
+                        {rollsLog.shift()}
+                        {rollsLog.map((num, index) => {
+                            return (
+                                <li key={index}>{num}</li>
+                            )
+                        })}
+                    </ul>
+                    
                 
+                )}
             
-            )}
+            
+            
+            
             
             
         </div>
     )
 
-}
-
+        }

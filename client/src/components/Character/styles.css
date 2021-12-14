@@ -9,7 +9,15 @@
     padding-inline-start: 0px;
     text-align: left
 }
-
+.characterNums {
+    font-size: 12px; 
+    font-family: ballinger-mono-bold;
+    font-weight: 900;
+    margin-left: 3px; 
+    padding: 2px;
+    border: 1px solid #000;
+    width: 30%;
+}
 .dinline li {
     font-family: ballinger-mono-light, monospace;
     display: inline-block;
