@@ -90,8 +90,7 @@ export default function LogIn() {
         </Box>
       </Container>
       <footer>
-      <Link 
-         to="/">Back to Homepage</Link>
+      <p><Link to="/">Back to Homepage</Link>.</p>
       </footer>
     </ThemeProvider>
   

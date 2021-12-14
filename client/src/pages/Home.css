@@ -2,4 +2,21 @@
     text-align: center;
     margin-top: 10vh;
     justify-content:space-between;
+    font-size: 3em;
+    color: #5c503f;
+
+}
+ a:nth-child(1) {
+    color: #8a775c;
+    border: 5px solid rgba(77, 74, 48, 0.8);
+    font-weight: 5;
+    font-size: 1em;
+
+}
+a:nth-child(2){
+color: #8a775c;
+border: 5px solid rgba(77, 74, 48, 0.8);
+font-weight: 5;
+font-size: 1em;
+
 }
