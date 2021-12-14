@@ -11,6 +11,17 @@ function CharacterSheet() {
 
   const { data } = useQuery(QUERY_CHARACTERS);
 
+  console.log(data)
+
+    // <CharacterCard
+    //   key={index}
+    //   _id={character._id}
+    //   level={character.level}
+    //   name={character.name}
+    //   characterStats={character.characterStats}
+    //   abilityScores={character.abilityScores.Ability}
+    //   class={character.class}
+    // />
   return (
     <div className="">
       <div className="">

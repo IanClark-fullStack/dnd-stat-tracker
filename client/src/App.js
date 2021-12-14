@@ -1,12 +1,34 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import {
+//   ApolloClient,
+//   InMemoryCache,
+//   ApolloProvider,
+//   createHttpLink,
+// } from '@apollo/client';
+// import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import User from './pages/User';
 import Admin from './pages/Admin';
+
+import LoginPage from './components/LoginPage'
+import RegisterPage from './components/RegisterPage'
+import LandingPage from './components/LandingPage'
+import HomePage from './components/HomePage'
+import Dice from './components/Dice';
 import DiceRoller from './components/DiceRoller';
+
+// import LoginPage from './components/pages/LoginPage'
+// import RegisterPage from './components/pages/RegisterPage'
+// import LandingPage from './components/pages/LandingPage'
+// import HomePage from './components/pages/HomePage'
+
+
+// Adding Imports 
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import {
   ApolloClient,
@@ -39,18 +61,31 @@ const client = new ApolloClient({
 function App() {
   return (
   <ApolloProvider client={client}>
+
     <Router>
       <div>
+
+
         <Switch>
+          {/* <Route exact path="/" component={Home} /> */}
+
+          {/* <Route exact path="/login" component={Login} /> */}
+
           <Route exact path="/login" component={Login} />
+          {/* <Route path="/login" component={ LoginPage } />
+
+          <Route path="/register" component={ RegisterPage } />*/}
           <Route exact path="/" component={Home} /> 
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/dashboard" component={User} />
           <Route exact path="/dmdashboard" component={Admin} />
+          <Route exact path="/dice" component={Dice} />
           <Route exact path="/diceroller" component={DiceRoller} />
         </Switch>
+
       </div>
     </Router>
+
   </ApolloProvider>
   );
 }

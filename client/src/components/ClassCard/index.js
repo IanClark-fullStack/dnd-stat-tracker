@@ -1,7 +1,7 @@
 import React from "react";
-// import AbilityCard from '../AbilityCard';
-// import SkillCard from '../SkillCard';
-// import StatCard from '../StatCard';
+import AbilityCard from '../AbilityCard';
+import SkillCard from '../SkillCard';
+import StatCard from '../StatCard';
 
 // import './styles.css';
 import Accordion from '@mui/material/Accordion';
