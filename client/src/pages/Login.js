@@ -13,6 +13,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import { useMutation } from '@apollo/client';
+import Grid from "@material-ui/core/Grid";
 
 
 
@@ -88,10 +89,13 @@ export default function LogIn() {
     
           </Box>
         </Box>
+        <Grid container justify="flex-end">
+                        <Grid item>
+                            <Link to="/">Back to Homepage
+                            </Link>
+                        </Grid>
+                    </Grid>
       </Container>
-      <footer>
-      <p><Link to="/">Back to Homepage</Link>.</p>
-      </footer>
     </ThemeProvider>
   
   );
