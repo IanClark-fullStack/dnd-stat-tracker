@@ -17,8 +17,6 @@ export default function Dice() {
     const rollEm = (choice) => {
         setDiceValue('')
         setDiceValue(choice);
-         
-        
     }
  
 

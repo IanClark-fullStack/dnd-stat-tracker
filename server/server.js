@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-const http = require('http');
+// const http = require('http');
 
 
 const { typeDefs, resolvers } = require('./schemas');
@@ -10,8 +10,8 @@ const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const { Server } = require("socket.io");
-const { emit } = require('process');
+// const { Server } = require("socket.io");
+// const { emit } = require('process');
 
 const server = new ApolloServer({
     typeDefs,
@@ -19,7 +19,8 @@ const server = new ApolloServer({
     context: authMiddleware
 });
 
-const io = new Server(server);
+// const io = new Server(server);
+
 
 server.applyMiddleware({ app });
 
@@ -33,6 +34,7 @@ app.use('/images', express.static(path.join(__dirname, '../client/images')));
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
+
 
 
 
@@ -67,6 +69,7 @@ if (process.env.NODE_ENV === 'production') {
 //     //     io.emit('wisdom change', )
 //     // });
 // })
+
 
 // app.get('*', (req, res) => {
 //     res.sendFile(path.join(__dirname, '../client/build/index.html'));
