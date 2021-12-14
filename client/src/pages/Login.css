@@ -3,7 +3,7 @@
     margin-top: 10vh;
     justify-content:space-between;
 }
-h2 {
+/* h2 {
     font-weight: 300
 }
 
@@ -49,9 +49,11 @@ input {
 #sub_btn:hover {
     background: #333;
     transition: all .5s
-}
+} */
 
-footer p {
+/* footer p {
     margin: 0;
-    font-size: .9rem
-}
+    font-size: .9rem;
+    text-align: center;
+
+} */

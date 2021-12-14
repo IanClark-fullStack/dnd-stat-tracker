@@ -31,6 +31,7 @@ export default function DiceRoller() {
         let newNum = diceValue.result; 
         
         // log.length < 5 ? log.push(newNum) : log.shift(); 
+        // socket.emit('dice roll', (newNum));
         // console.log(log);
         setRollsLog([...rollsLog, result]); 
         console.log(rollsLog);
