@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-const http = require('http');
+// const http = require('http');
 
 
 const { typeDefs, resolvers } = require('./schemas');
@@ -10,8 +10,8 @@ const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
-const { Server } = require("socket.io");
-const { emit } = require('process');
+// const { Server } = require("socket.io");
+// const { emit } = require('process');
 
 const server = new ApolloServer({
     typeDefs,
@@ -19,7 +19,8 @@ const server = new ApolloServer({
     context: authMiddleware
 });
 
-const io = new Server(server);
+// const io = new Server(server);
+
 
 server.applyMiddleware({ app });
 
@@ -38,36 +39,37 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
-io.on('connection', (socket) => {
-    socket.join("game room");
-    // socket.on('player joined', () => {
-    //     io.emit('player joined', )
-    // });
-    socket.on('dice roll', (totalDiceRollSum) => {
-        io.emit('dice roll', totalDiceRollSum)
-    });
-    socket.on('stat change', (statForCharacter) => {
-        io.emit('stat change', statForCharacter)
-    })
-    // socket.on('strength change', () => {
-    //     io.emit('strength change', )
-    // });
-    // socket.on('intelligence change', () => {
-    //     io.emit('intelligence change', )
-    // });
-    // socket.on('charisma change', () => {
-    //     io.emit('charisma change', )
-    // });
-    // socket.on('constitution change', () => {
-    //     io.emit('constitution change', )
-    // });
-    // socket.on('dexterity change', () => {
-    //     io.emit('dexterity change', )
-    // });
-    // socket.on('wisdom change', () => {
-    //     io.emit('wisdom change', )
-    // });
-})
+// io.on('connection', (socket) => {
+//     socket.join("game room");
+//     // socket.on('player joined', () => {
+//     //     io.emit('player joined', )
+//     // });
+//     socket.on('dice roll', (newNum) => {
+//         console.log(newNum)
+//         io.emit('dice roll', newNum)
+//     });
+//     socket.on('stat change', (statForCharacter) => {
+//         io.emit('stat change', statForCharacter)
+//     })
+//     // socket.on('strength change', () => {
+//     //     io.emit('strength change', )
+//     // });
+//     // socket.on('intelligence change', () => {
+//     //     io.emit('intelligence change', )
+//     // });
+//     // socket.on('charisma change', () => {
+//     //     io.emit('charisma change', )
+//     // });
+//     // socket.on('constitution change', () => {
+//     //     io.emit('constitution change', )
+//     // });
+//     // socket.on('dexterity change', () => {
+//     //     io.emit('dexterity change', )
+//     // });
+//     // socket.on('wisdom change', () => {
+//     //     io.emit('wisdom change', )
+//     // });
+// })
 
 db.once('open', () => {
     app.listen(PORT, () => {
