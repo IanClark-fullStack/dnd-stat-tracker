@@ -34,9 +34,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+
 
 io.on('connection', (socket) => {
     socket.join("game room");
@@ -45,6 +43,7 @@ io.on('connection', (socket) => {
     // });
     socket.on('dice roll', (totalDiceRollSum) => {
         io.emit('dice roll', totalDiceRollSum)
+        console.log(totalDiceRollSum)
     });
     socket.on('stat change', (statForCharacter) => {
         io.emit('stat change', statForCharacter)
@@ -68,6 +67,12 @@ io.on('connection', (socket) => {
     //     io.emit('wisdom change', )
     // });
 })
+
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
+
+
 
 db.once('open', () => {
     app.listen(PORT, () => {

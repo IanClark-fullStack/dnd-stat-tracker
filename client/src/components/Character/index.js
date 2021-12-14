@@ -38,7 +38,7 @@ function CharacterSheet() {
                                 <ul className='dinline'>
                                     <li key={index}>{`the ${character.class.name}`}</li>
                                     <li>Level - {character.level}</li>
-                                    <li>{"HP"}</li>
+                                    <li>{`HP ${character.HP}`}</li>
                                 </ul>
                             </Box>
                       
