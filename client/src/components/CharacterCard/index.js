@@ -2,6 +2,7 @@ import React from "react";
 import AbilityCard from '../AbilityCard';
 import SkillCard from '../SkillCard';
 import StatCard from '../StatCard';
+import ClassCard from '../ClassCard';
 import { useQuery } from '@apollo/client';
 import './styles.css';
 import { QUERY_ABILITIES, QUERY_STATS } from '../../utils/queries';
@@ -15,9 +16,8 @@ import Box from '@mui/material/Box';
 function CharacterCard({characterProp}) {
   const [expanded, setExpanded] = React.useState(false);
   const abilityProp = characterProp.abilityScores; 
-  const statProp = characterProp.characterStats;
-  const classProp = characterProp.class; 
- 
+  
+
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -95,42 +95,9 @@ function CharacterCard({characterProp}) {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion sx={{ width: '100%', margin: '0px'}} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary
-        sx={{borderBottom: '1px solid #000'}}
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2bh-content"
-          id="panel2bh-header"
-        >
-          <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: '900' }}>
-            {`Class`}
-          </Typography>
-          <Typography sx={{ color: 'text.secondary', marginLeft: '4px' }}>      
-            {`${classProp.name}`}
-          </Typography>
-        </AccordionSummary>
+      <ClassCard classProp={characterProp.class} />
 
-        <AccordionDetails sx={{marginBottom: '0px'}}>
-          <Typography>
-          <Box sx={{ display: 'flex', width: '100%', flexDirection: 'column' }}>
-            <h5 className='smFont'>{`${abilityProp.fullName}`}</h5>
-            <ul className='scoreSet'>
-              <li>modifier
-                <span className='characterNums1'>{abilityProp.modifier}</span>
-              </li>
-              <li>saving throw
-                <span className='characterNums1'>{abilityProp.modifier}</span>
-              </li>
-              
-              {/* <SkillCard skillProp={abilityProp.skills} /> */}
-              <li>
-                <span className='characterNums1'>{abilityProp.modifier}</span>
-              </li>
-            </ul>
-          </Box>
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
+      <      
       {/* <Accordion>
         <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
