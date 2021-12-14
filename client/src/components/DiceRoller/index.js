@@ -1,16 +1,20 @@
 import { useState } from 'react';
+import './styles.css';
 // const { io } = require('socket.io-client');
 // CHANGE BEFORE DEPLOYMENT
+// const socket = io('http://localhost:3001');
+// const {io} = require('socket.io-client');
 // const socket = io('http://localhost:3001');
 
 export default function DiceRoller() {  
     const [diceValue, setDiceValue] = useState({result: 0, dice: [4, 6, 8, 10, 20]});
     const [rollsLog, setRollsLog] = useState([]); 
+    
     // useEffect(() => {
     //     console.log('joining room');
     //     socket.emit('dice roll', {room: 'test-room'});
         
-    // })
+    // }, [])
     // useEffect(() => {
     //     socket.on( payload => {
     //         setMessageCount(messageCount + 1);
@@ -35,7 +39,6 @@ export default function DiceRoller() {
         setRollsLog([...rollsLog, result]); 
         console.log(rollsLog);
         
-        
     }
 
     const handleChange = (event) => {
@@ -53,29 +56,31 @@ export default function DiceRoller() {
             <h5> Make your move </h5>
             {diceValue.dice.map((el, index)=> {
                 return (
-                    <>
-                    <button key={index} name={el} onClick={calculateTotal}>{`Roll ${el}`}</button>
-                    </>
+                    <div className='seperate'>
+                        <button className='easyButton' key={index} name={el} onClick={calculateTotal}>{`Roll ${el}`}</button>
+                    </div>
                 )
             })}
-            <h2 name={diceValue.result}>{diceValue.result}</h2>
+            <h2 className='rollTotal' name={diceValue.result}>{diceValue.result}</h2>
             {!rollsLog.length ? (
                 <h6>Roll the dice</h6>
                 ) : 
+                
                 rollsLog.length < 6 ? (
-                    <ul>
+                    
+                    <ul className='liBlock'>
                         {rollsLog.map((num, index) => {
                             return (
-                                <li key={index}>{num}</li>
+                                <li className='rollStyle' key={index}>{num}</li>
                             )
                         })}
                     </ul>
                 ) : (
-                    <ul>
+                    <ul className='liBlock'>
                         {rollsLog.shift()}
                         {rollsLog.map((num, index) => {
                             return (
-                                <li key={index}>{num}</li>
+                                <li className='rollStyle'  key={index}>{num}</li>
                             )
                         })}
                     </ul>

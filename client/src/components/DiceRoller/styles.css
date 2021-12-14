@@ -1,0 +1,80 @@
+.mono {
+    font-family: ballinger-mono, monospace;
+    text-align: left;
+    margin-top: 10vh;
+    
+}
+.smFont{ 
+    font-family: ballinger-mono-bold, monospace;
+    text-align: left;
+    font-size: 14px;
+}
+
+.justifyCon {
+    width: 100%;
+}
+.seperate {
+    margin: 4px 0px;
+    display: inline-flex;
+}
+.scoreSet {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    margin-top: 2vh;
+    text-align: left;
+
+}
+.easyButton {
+    padding: 4px 10px 5px 10px;
+    border: 2px solid #000; 
+    background-color: #fff;
+    margin: 3px 3px;
+}
+.easyButton:hover, .easyButton.active {
+    border: 2px solid rgb(101, 101, 101); 
+    background-color: #000;
+    color: #fff;
+}
+.rollStyle {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    margin-top: 2vh;
+   margin-right: 2%;
+    padding: 5px;
+    display: inline-flex;
+    /* flex-direction: column-reverse; */
+    color: #000000;
+    
+    font-family: ballinger-mono-bold, monospace;
+    font-weight: 900;
+}
+.rollStyle:nth-child(1)  {
+    color: rgb(184, 184, 184);
+    margin-top: 3vh;
+}
+.rollStyle:nth-child(2)  {
+    color: rgb(136, 136, 136);
+    
+    margin-top: 3vh;
+}
+.rollStyle:nth-child(3)  {
+    color: rgb(100, 100, 100);
+    margin-top: 3vh;
+}
+.rollStyle:nth-child(4)  {
+    color: rgb(50, 50, 50);
+    margin-top: 3vh;
+}
+
+
+
+
+.character-container {
+    border: 1px solid #333;
+    margin-bottom: 6vh;
+}
+.css-1j6qxbk {
+    width: 100% !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
