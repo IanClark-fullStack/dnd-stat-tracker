@@ -1,11 +1,11 @@
 import React from "react";
-import AbilityCard from '../AbilityCard';
-import SkillCard from '../SkillCard';
-import StatCard from '../StatCard';
+// import AbilityCard from '../AbilityCard';
+// import SkillCard from '../SkillCard';
+// import StatCard from '../StatCard';
 import ClassCard from '../ClassCard';
-import { useQuery } from '@apollo/client';
-import './styles.css';
-import { QUERY_ABILITIES, QUERY_STATS } from '../../utils/queries';
+// import { useQuery } from '@apollo/client';
+// import './styles.css';
+// import { QUERY_ABILITIES, QUERY_STATS } from '../../utils/queries';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -97,7 +97,6 @@ function CharacterCard({characterProp}) {
       </Accordion>
       <ClassCard classProp={characterProp.class} />
 
-      <      
       {/* <Accordion>
         <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
