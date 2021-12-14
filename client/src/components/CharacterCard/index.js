@@ -97,7 +97,7 @@ function CharacterCard({characterProp}) {
       </Accordion>
       <ClassCard classProp={characterProp.class} />
 
-      <      
+            
       {/* <Accordion>
         <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
